@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Apartamentos em Garopaba</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#0B1A1F;color:#F4EFE6;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#EAD9B5}a:hover{color:#fff}
+button{font-family:inherit}
+button:focus-visible,[role=button]:focus-visible{outline:2px solid #EAD9B5;outline-offset:3px}
+</style>
+</helmet>
+<div style="min-height:100vh;font-family:'Bricolage Grotesque',system-ui,sans-serif;background:#0B1A1F;color:#F4EFE6">
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <section style="position:relative;height:100svh;min-height:560px;overflow:hidden;background:#16303A">
+    <div style="position:absolute;inset:0">
+      <img src="fotos/hero-garopaba.webp" alt="Garopaba" style="width:100%;height:100%;object-fit:cover;display:block">
+    </div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(11,26,31,0.55) 0%,rgba(11,26,31,0) 28%,rgba(11,26,31,0) 45%,rgba(11,26,31,0.85) 88%,#0B1A1F 100%)"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between;padding:22px 20px 16vh;max-width:1240px;margin:0 auto">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <span style="display:flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);font-size:15px;font-weight:500">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+          Garopaba, Santa Catarina
+        </span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <h1 style="margin:0;font-size:clamp(76px,17vw,232px);line-height:0.82;font-weight:700;letter-spacing:-0.055em;font-variation-settings:'opsz' 96;color:#fff">Garopaba</h1>
+        <p style="margin:0;font-size:clamp(18px,2.2vw,24px);font-weight:400;color:rgba(255,255,255,0.88);max-width:30ch">Escolha o apartamento para ver as fotos</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative;margin-top:-12vh;padding:0 0 64px">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-auto-flow:column;grid-auto-columns:min(84vw,calc(78vh * 0.8),600px);justify-content:safe center;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 8px;scrollbar-width:none">
+      <div role="button" tabindex="0" onClick="{{ open2 }}" style="scroll-snap-align:center;position:relative;aspect-ratio:4 / 5;border-radius:34px;overflow:hidden;background:#16303A;cursor:pointer;box-shadow:0 30px 60px -30px rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.12)">
+        <div style="position:absolute;inset:0">
+          <img src="fotos/capa-apto2.jpeg" alt="" draggable="false" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block">
+        </div>
+        <div style="position:absolute;inset:auto 0 0 0;height:45%;pointer-events:none;background:linear-gradient(180deg,rgba(11,26,31,0),rgba(11,26,31,0.7))"></div>
+        <div style="position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;pointer-events:none">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="align-self:flex-start;height:30px;padding:0 12px;display:flex;align-items:center;border-radius:999px;background:#EAD9B5;color:#0B1A1F;font-size:14px;font-weight:600">Até 6 pessoas</span>
+            <span style="font-size:clamp(28px,4vw,40px);line-height:0.98;font-weight:650;letter-spacing:-0.035em;color:#fff">Apartamento<br>2 dormitórios</span>
+          </div>
+          <span style="flex:none;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:grid;place-items:center;color:#fff">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+          </span>
+        </div>
+      </div>
+      <div role="button" tabindex="0" onClick="{{ open1 }}" style="scroll-snap-align:center;position:relative;aspect-ratio:4 / 5;border-radius:34px;overflow:hidden;background:#16303A;cursor:pointer;box-shadow:0 30px 60px -30px rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.12)">
+        <div style="position:absolute;inset:0">
+          <img src="fotos/capa-apto1.jpeg" alt="" draggable="false" style="width:100%;height:100%;object-fit:cover;object-position:35% center;display:block">
+        </div>
+        <div style="position:absolute;inset:auto 0 0 0;height:45%;pointer-events:none;background:linear-gradient(180deg,rgba(11,26,31,0),rgba(11,26,31,0.7))"></div>
+        <div style="position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;pointer-events:none">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="align-self:flex-start;height:30px;padding:0 12px;display:flex;align-items:center;border-radius:999px;background:#EAD9B5;color:#0B1A1F;font-size:14px;font-weight:600">Até 4 pessoas</span>
+            <span style="font-size:clamp(28px,4vw,40px);line-height:0.98;font-weight:650;letter-spacing:-0.035em;color:#fff">Apartamento<br>1 dormitório</span>
+          </div>
+          <span style="flex:none;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:grid;place-items:center;color:#fff">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ isGallery }}" hint-placeholder-val="{{ false }}">
+  <div style="position:sticky;top:0;z-index:5;padding:12px 16px;display:flex;justify-content:center;pointer-events:none">
+    <div style="pointer-events:auto;display:flex;align-items:center;gap:6px;padding:5px;border-radius:999px;background:rgba(11,26,31,0.55);border:1px solid rgba(255,255,255,0.18);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);max-width:100%">
+      <button onClick="{{ goHome }}" aria-label="Voltar" style="flex:none;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,0.12);color:#fff;display:grid;place-items:center;cursor:pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+      </button>
+      <button onClick="{{ open2 }}" aria-pressed="{{ is2 }}" style="border:none;cursor:pointer;height:40px;padding:0 16px;border-radius:999px;font-size:15px;font-weight:550;white-space:nowrap;background:{{ tab2Bg }};color:{{ tab2Fg }}">2 dormitórios</button>
+      <button onClick="{{ open1 }}" aria-pressed="{{ is1 }}" style="border:none;cursor:pointer;height:40px;padding:0 16px;border-radius:999px;font-size:15px;font-weight:550;white-space:nowrap;background:{{ tab1Bg }};color:{{ tab1Fg }}">1 dormitório</button>
+    </div>
+  </div>
+  <main style="max-width:1240px;margin:0 auto;padding:0 14px 64px;display:flex;flex-direction:column;gap:10px">
+    <div role="button" tabindex="0" onClick="{{ openHero }}" draggable="{{ editable }}" onDragStart="{{ heroDragStart }}" onDragOver="{{ heroDragOver }}" onDrop="{{ heroDrop }}" onDragEnd="{{ dragEnd }}" style="position:relative;height:min(72svh,720px);min-height:420px;border-radius:34px;overflow:hidden;background:#16303A;cursor:{{ tileCursor }};outline:{{ heroOutline }};outline-offset:3px;border:1px solid rgba(255,255,255,0.1)">
+      {{ heroImg }}
+      {{ heroVideo }}
+      <sc-if value="{{ videoOk }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;top:16px;right:16px;z-index:2">{{ volCtrl }}</div>
+      </sc-if>
+      <div style="position:absolute;inset:auto 0 0 0;height:50%;pointer-events:none;background:linear-gradient(180deg,rgba(11,26,31,0),rgba(11,26,31,0.75))"></div>
+      <div style="position:absolute;left:20px;right:20px;bottom:20px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;pointer-events:none">
+        <h1 style="margin:0;font-size:clamp(40px,7vw,92px);line-height:0.88;font-weight:700;letter-spacing:-0.05em;color:#fff">{{ aptTitle }}</h1>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <sc-if value="{{ is2 }}" hint-placeholder-val="{{ true }}">
+            <span style="height:34px;padding:0 14px;display:flex;align-items:center;border-radius:999px;background:#EAD9B5;color:#0B1A1F;font-size:15px;font-weight:600">Até 6 pessoas</span>
+          </sc-if>
+          <span style="height:34px;padding:0 14px;display:flex;align-items:center;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.28);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#fff;font-size:15px;font-weight:500">{{ countLabel }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(44%,220px),1fr));grid-auto-rows:clamp(170px,22vw,260px);grid-auto-flow:dense;gap:10px">
+      <sc-for list="{{ photos }}" as="p" hint-placeholder-count="0">
+        <div onClick="{{ p.open }}" draggable="{{ editable }}" onDragStart="{{ p.dragStart }}" onDragOver="{{ p.dragOver }}" onDrop="{{ p.drop }}" onDragEnd="{{ dragEnd }}" style="position:relative;grid-column:{{ p.col }};grid-row:{{ p.row }};border-radius:28px;overflow:hidden;background:#16303A;cursor:{{ tileCursor }};outline:{{ p.outline }};outline-offset:3px;opacity:{{ p.opacity }};transition:opacity .15s">
+          {{ p.img }}
+          <sc-if value="{{ editable }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:10px;right:10px;display:flex;gap:6px">
+              <button onClick="{{ p.remove }}" aria-label="Excluir foto" title="Excluir foto" style="width:36px;height:36px;border-radius:50%;border:none;background:#C4452F;color:#fff;display:grid;place-items:center;cursor:pointer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>
+              </button>
+            </div>
+            <span style="position:absolute;left:10px;top:10px;height:28px;min-width:28px;padding:0 9px;display:grid;place-items:center;border-radius:999px;background:rgba(11,26,31,0.6);color:#fff;font-size:13px;font-weight:600">{{ p.num }}</span>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+    <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:24px 0;text-align:center;font-size:18px;color:#A9B8B8">Fotos em breve.</p>
+    </sc-if>
+    <sc-if value="{{ showRestore }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ restore }}" style="align-self:center;height:44px;padding:0 18px;border-radius:999px;border:1px dashed rgba(255,255,255,0.35);background:transparent;color:#F4EFE6;font-size:15px;cursor:pointer">{{ restoreLabel }}</button>
+    </sc-if>
+
+    <button onClick="{{ openOther }}" style="margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;border-radius:28px;border:1px solid rgba(255,255,255,0.14);background:#13272D;color:#F4EFE6;cursor:pointer;text-align:left" style-hover="background:#1A333A">
+      <span style="display:flex;flex-direction:column;gap:4px">
+        <span style="font-size:15px;color:#A9B8B8">Ver também</span>
+        <span style="font-size:clamp(24px,3.4vw,36px);font-weight:650;letter-spacing:-0.03em;line-height:1">{{ otherLabel }}</span>
+      </span>
+      <span style="flex:none;width:52px;height:52px;border-radius:50%;background:#EAD9B5;color:#0B1A1F;display:grid;place-items:center">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </span>
+    </button>
+  </main>
+</sc-if>
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div onTouchStart="{{ onTouchStart }}" onTouchEnd="{{ onTouchEnd }}" style="position:fixed;inset:0;z-index:50;background:rgba(6,15,18,0.97);display:flex;flex-direction:column;color:#fff">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px">
+      <span style="height:36px;padding:0 14px;display:flex;align-items:center;border-radius:999px;background:rgba(255,255,255,0.12);font-size:15px">{{ lbCounter }}</span>
+      <button onClick="{{ closeLb }}" aria-label="Fechar" style="width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,0.12);color:#fff;display:grid;place-items:center;cursor:pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+    </div>
+    <div onClick="{{ closeLb }}" style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 12px">{{ lbImg }}</div>
+    <div style="display:flex;justify-content:center;gap:12px;padding:16px 16px 24px">
+      <button onClick="{{ prev }}" aria-label="Anterior" style="width:54px;height:54px;border-radius:50%;border:none;background:rgba(255,255,255,0.12);color:#fff;display:grid;place-items:center;cursor:pointer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"></path></svg>
+      </button>
+      <button onClick="{{ next }}" aria-label="Próxima" style="width:54px;height:54px;border-radius:50%;border:none;background:#EAD9B5;color:#0B1A1F;display:grid;place-items:center;cursor:pointer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6l6 6-6 6"></path></svg>
+      </button>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { view: 'home', lb: null };
+  componentDidMount() {
+    this._hash = () => this.syncHash();
+    window.addEventListener('hashchange', this._hash);
+    this._key = (e) => {
+      if (!this.state.lb) return;
+      if (e.key === 'Escape') this.closeLb();
+      if (e.key === 'ArrowRight') this.step(1);
+      if (e.key === 'ArrowLeft') this.step(-1);
+    };
+    window.addEventListener('keydown', this._key);
+    this.syncHash();
+    this.loadGal();
+    this._t = setTimeout(() => this.forceUpdate(), 1200);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('hashchange', this._hash);
+    window.removeEventListener('keydown', this._key);
+  }
+  syncHash() {
+    const h = location.hash;
+    const view = h === '#2-dormitorios' ? 'a2' : h === '#1-dormitorio' ? 'a1' : 'home';
+    if (view !== this.state.view) { this.setState({ view, lb: null }); window.scrollTo(0, 0); }
+  }
+  go(view) {
+    const hash = view === 'a2' ? '#2-dormitorios' : view === 'a1' ? '#1-dormitorio' : '';
+    history.pushState(null, '', hash || location.pathname + location.search);
+    this.setState({ view, lb: null, vol: 0 });
+    window.scrollTo(0, 0);
+  }
+  key(view) { return view === 'a2' ? 'apto2' : 'apto1'; }
+  list(view) { const g = this.state.gal; return (g && g[this.key(view)]) || []; }
+  loadGal() {
+    fetch('galeria.state.json', { cache: 'no-store' }).then((r) => r.ok ? r.json() : null).then((g) => {
+      if (g) this.setState({ gal: { apto2: g.apto2 || [], apto1: g.apto1 || [], removidas: g.removidas || { apto2: [], apto1: [] } } });
+    }).catch(() => {});
+  }
+  saveGal(gal) {
+    this.setState({ gal });
+    const w = window.omelette && window.omelette.writeFile;
+    if (w) Promise.resolve(w('galeria.state.json', JSON.stringify(gal))).catch(() => {});
+  }
+  edit(fn) {
+    const g = this.state.gal; if (!g) return;
+    const k = this.key(this.state.view);
+    const gal = { ...g, [k]: [...g[k]], removidas: { apto2: [...((g.removidas || {}).apto2 || [])], apto1: [...((g.removidas || {}).apto1 || [])] } };
+    fn(gal[k], gal.removidas[k]);
+    this.saveGal(gal);
+  }
+  detectBars(el, src) {
+    if ((this.state.vcrop || {})[src]) return;
+    const vw = el.videoWidth, vh = el.videoHeight;
+    if (!vw || !vh) return;
+    let d;
+    try {
+      const W = 160, H = Math.round(160 * vh / vw);
+      const c = document.createElement('canvas'); c.width = W; c.height = H;
+      const x = c.getContext('2d'); x.drawImage(el, 0, 0, W, H);
+      d = x.getImageData(0, 0, W, H).data;
+      const dark = (px, py) => { const i = (py * W + px) * 4; return d[i] + d[i + 1] + d[i + 2] < 60; };
+      const colDark = (px) => { let n = 0; for (let y = 0; y < H; y += 2) if (dark(px, y)) n++; return n / Math.ceil(H / 2) > 0.95; };
+      const rowDark = (py) => { let n = 0; for (let q = 0; q < W; q += 2) if (dark(q, py)) n++; return n / Math.ceil(W / 2) > 0.95; };
+      let l = 0, r = 0, t = 0, b = 0;
+      while (l < W * 0.45 && colDark(l)) l++;
+      while (r < W * 0.45 && colDark(W - 1 - r)) r++;
+      while (t < H * 0.45 && rowDark(t)) t++;
+      while (b < H * 0.45 && rowDark(H - 1 - b)) b++;
+      const pad = 1;
+      const crop = { vw, vh, l: l ? (l + pad) / W : 0, r: r ? (r + pad) / W : 0, t: t ? (t + pad) / H : 0, b: b ? (b + pad) / H : 0 };
+      this.setState((s) => ({ vcrop: { ...(s.vcrop || {}), [src]: crop } }));
+    } catch (e) {}
+  }
+  volCtrl(value, key) {
+    const set = (v) => this.setState({ [key]: v, ...(v > 0 ? { [key + 'Last']: v } : {}) });
+    const last = this.state[key + 'Last'] || 60;
+    const stop = (e) => e.stopPropagation();
+    const icon = value === 0 ? 'M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6' : value < 50 ? 'M11 5L6 9H2v6h4l5 4V5zM15.5 8.5a5 5 0 0 1 0 7' : 'M11 5L6 9H2v6h4l5 4V5zM15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14';
+    return React.createElement('div', { onClick: stop, onPointerDown: stop, onMouseDown: stop, onDragStart: (e) => { e.preventDefault(); e.stopPropagation(); }, draggable: false,
+      style: { display: 'flex', alignItems: 'center', gap: 10, height: 44, padding: '0 14px 0 6px', borderRadius: 999, border: '1px solid rgba(255,255,255,0.28)', background: 'rgba(11,26,31,0.5)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', color: '#fff', cursor: 'default' } },
+      React.createElement('button', { 'aria-label': value === 0 ? 'Ativar som' : 'Tirar som', onClick: (e) => { e.stopPropagation(); set(value === 0 ? last : 0); },
+        style: { width: 34, height: 34, borderRadius: '50%', border: 'none', background: 'rgba(255,255,255,0.14)', color: '#fff', display: 'grid', placeItems: 'center', cursor: 'pointer', padding: 0 } },
+        React.createElement('svg', { width: 18, height: 18, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' }, React.createElement('path', { d: icon }))),
+      React.createElement('input', { type: 'range', min: 0, max: 100, step: 1, value, 'aria-label': 'Volume', onChange: (e) => set(Number(e.target.value)),
+        style: { width: 110, accentColor: '#EAD9B5', cursor: 'pointer', margin: 0 } }),
+      React.createElement('span', { style: { minWidth: 38, textAlign: 'right', fontSize: 13, fontVariantNumeric: 'tabular-nums' } }, value + '%'));
+  }
+  frame(src, { muted = true, onClick, volume = 1 } = {}) {
+    const crop = (this.state.vcrop || {})[src];
+    const fx = crop ? 1 - crop.l - crop.r : 1, fy = crop ? 1 - crop.t - crop.b : 1;
+    const cw = crop ? crop.vw * fx : 0, ch = crop ? crop.vh * fy : 0;
+    const full = { position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' };
+    const mute = (el) => { if (el) { el.muted = true; el.defaultMuted = true; el.volume = 0; } };
+    let bgEl = null;
+    return React.createElement('div', { key: 'f-' + src, onClick, style: { position: 'absolute', inset: 0, overflow: 'hidden', background: '#0B1A1F' } },
+      React.createElement('video', { src, autoPlay: true, muted: true, loop: true, playsInline: true, 'aria-hidden': true, preload: 'metadata',
+        ref: (el) => { bgEl = el; mute(el); }, onPlay: (e) => { e.target.muted = true; e.target.volume = 0; },
+        style: { ...full, objectFit: 'cover', filter: 'blur(36px) brightness(0.7)', transform: `scale(${Math.max(1 / fx, 1 / fy) * 1.15})` } }),
+      React.createElement('div', { style: crop
+        ? { position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', aspectRatio: `${cw} / ${ch}`, width: '100%', maxWidth: '100%', maxHeight: '100%', overflow: 'hidden', ...(cw / ch < 1 ? { height: '100%', width: 'auto' } : {}) }
+        : { position: 'absolute', inset: 0 } },
+        React.createElement('video', { src, autoPlay: true, loop: true, playsInline: true, preload: 'metadata', draggable: false,
+          ref: (el) => { if (el) { el.muted = muted; el.defaultMuted = true; el.volume = muted ? 0 : volume; } },
+          onLoadedData: (e) => { const el = e.target; setTimeout(() => this.detectBars(el, src), 400); },
+          onPlay: (e) => { e.target.muted = muted; if (bgEl) { bgEl.currentTime = e.target.currentTime; bgEl.play().catch(() => {}); } },
+          style: crop
+            ? { position: 'absolute', maxWidth: 'none', pointerEvents: 'none', width: `${100 / fx}%`, height: `${100 / fy}%`, left: `${-100 * crop.l / fx}%`, top: `${-100 * crop.t / fy}%` }
+            : { ...full, objectFit: 'contain' } })));
+  }
+  isVid(src) { return /\.(mp4|mov|webm)$/i.test(src || ''); }
+  media(src, style) {
+    if (!this.isVid(src)) return React.createElement('img', { src, alt: '', loading: 'lazy', draggable: false, style });
+    return React.createElement(React.Fragment, null,
+      this.frame(src, { muted: true }),
+      React.createElement('span', { style: { position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: 56, height: 56, borderRadius: '50%', background: 'rgba(11,26,31,0.5)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.3)', display: 'grid', placeItems: 'center', pointerEvents: 'none' } },
+        React.createElement('svg', { width: 20, height: 20, viewBox: '0 0 24 24', fill: '#fff' }, React.createElement('path', { d: 'M8 5v14l11-7z' }))));
+  }
+  moveTo(src, target) { this.edit((l) => { const i = l.indexOf(src), j = l.indexOf(target); if (i < 0 || j < 0 || i === j) return; l.splice(i, 1); l.splice(j, 0, src); }); }
+  dnd(src) {
+    return {
+      dragStart: (e) => { if (!e.dataTransfer) return; e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', src); this.setState({ dragSrc: src }); },
+      dragOver: (e) => { if (!this.state.dragSrc) return; e.preventDefault(); if (this.state.dragOver !== src) this.setState({ dragOver: src }); },
+      drop: (e) => { e.preventDefault(); const from = this.state.dragSrc; this.setState({ dragSrc: null, dragOver: null }); if (from) this.moveTo(from, src); },
+    };
+  }
+  move(src, d) { this.edit((l) => { const i = l.indexOf(src), j = i + d; if (i < 0 || j < 0 || j >= l.length) return; [l[i], l[j]] = [l[j], l[i]]; }); }
+  remove(src) { if (!confirm('Excluir esta foto da galeria?')) return; this.edit((l, rm) => { const i = l.indexOf(src); if (i >= 0) { l.splice(i, 1); rm.push(src); } }); }
+  restore() { this.edit((l, rm) => { l.push(...rm.splice(0)); }); }
+  openLb(src) {
+    const srcs = this.list(this.state.view);
+    const i = srcs.indexOf(src);
+    if (i >= 0) this.setState({ lb: { srcs, i } });
+  }
+  closeLb() { this.setState({ lb: null }); }
+  step(d) {
+    this.setState((s) => s.lb ? { lb: { ...s.lb, i: (s.lb.i + d + s.lb.srcs.length) % s.lb.srcs.length } } : null);
+  }
+  renderVals() {
+    const { view, lb } = this.state;
+    const a2 = view === 'a2';
+    const pattern = ['big', 'small', 'small', 'tall', 'small', 'wide', 'small', 'small'];
+    const all = view === 'home' ? [] : this.list(view);
+    const editable = !!(window.omelette && window.omelette.writeFile);
+    const spans = { big: ['span 2', 'span 2'], tall: ['auto', 'span 2'], wide: ['span 2', 'auto'], small: ['auto', 'auto'] };
+    const imgStyle = { width: '100%', height: '100%', objectFit: 'cover', display: 'block' };
+    const videoSrc = view === 'home' ? '' : (a2 ? 'videos/apto2.mp4' : 'videos/area-comum.mp4');
+    const crop = (this.state.vcrop || {})[videoSrc];
+    const cw = crop ? crop.vw * (1 - crop.l - crop.r) : 0, ch = crop ? crop.vh * (1 - crop.t - crop.b) : 0;
+    const boxStyle = crop
+      ? { position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', aspectRatio: `${cw} / ${ch}`, ...(cw / ch < 1.6 ? { height: '100%' } : { width: '100%' }), maxWidth: '100%', maxHeight: '100%', overflow: 'hidden' }
+      : { position: 'absolute', inset: 0 };
+    const vidStyle = crop
+      ? { position: 'absolute', maxWidth: 'none', pointerEvents: 'none', width: `${100 / (1 - crop.l - crop.r)}%`, height: `${100 / (1 - crop.t - crop.b)}%`, left: `${-100 * crop.l / (1 - crop.l - crop.r)}%`, top: `${-100 * crop.t / (1 - crop.t - crop.b)}%` }
+      : { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', pointerEvents: 'none' };
+    const bgStyle = crop
+      ? { position: 'absolute', inset: '-10%', width: '120%', height: '120%', objectFit: 'cover', filter: 'blur(40px) brightness(0.7)', transform: `scale(${Math.max(1 / (1 - crop.l - crop.r), 1 / (1 - crop.t - crop.b)) * 1.1})`, pointerEvents: 'none' }
+      : null;
+    const videoOk = !!(videoSrc && this.state.vok && this.state.vok[videoSrc]);
+    const off = videoOk ? 0 : 1;
+    const vol = this.state.vol ?? 0;
+    const muted = vol === 0;
+    const lbVol = this.state.lbVol ?? 65;
+    const lbMuted = lbVol === 0;
+    const vstyle = { position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' };
+    const heroVideo = videoSrc && !(this.state.vbad && this.state.vbad[videoSrc]) ? React.createElement('div', {
+      key: videoSrc, style: { position: 'absolute', inset: 0, overflow: 'hidden', background: '#0B1A1F', opacity: videoOk ? 1 : 0, transition: 'opacity .6s', pointerEvents: 'none' },
+    },
+      React.createElement('video', { src: videoSrc, autoPlay: true, muted: true, loop: true, playsInline: true, 'aria-hidden': true,
+        ref: (el) => { this._bg = el; if (el) { el.muted = true; el.defaultMuted = true; el.volume = 0; } },
+        onPlay: (e) => { e.target.muted = true; e.target.volume = 0; },
+        style: bgStyle || { ...vstyle, objectFit: 'cover', filter: 'blur(40px) brightness(0.7)', transform: 'scale(1.3)' } }),
+      React.createElement('div', { style: boxStyle },
+        React.createElement('video', { src: videoSrc, autoPlay: true, muted, loop: true, playsInline: true, preload: 'auto',
+          ref: (el) => { if (el) { el.muted = muted; el.defaultMuted = true; el.volume = vol / 100; } },
+          onLoadedData: (e) => { const el = e.target; this.setState((s) => ({ vok: { ...(s.vok || {}), [videoSrc]: true } })); setTimeout(() => this.detectBars(el, videoSrc), 400); },
+          onError: () => this.setState((s) => ({ vbad: { ...(s.vbad || {}), [videoSrc]: true } })),
+          onPlay: (e) => { e.target.muted = (this.state.vol ?? 0) === 0; if (this._bg) { this._bg.currentTime = e.target.currentTime; this._bg.play().catch(() => {}); } },
+          style: vidStyle }))
+    ) : null;
+    const stop = (fn) => (e) => { e.stopPropagation(); fn(); };
+    const photos = all.slice(off).map((src, i) => {
+      const k = pattern[i % pattern.length];
+      return { src, col: spans[k][0], row: spans[k][1], num: i + 1 + off,
+        img: this.media(src, { ...imgStyle, pointerEvents: 'none' }),
+        ...this.dnd(src),
+        outline: this.state.dragOver === src && this.state.dragSrc !== src ? '3px solid #EAD9B5' : 'none',
+        opacity: this.state.dragSrc === src ? 0.35 : 1,
+        open: () => this.openLb(src), remove: stop(() => this.remove(src)) };
+    });
+    const heroSrc = !videoOk && all[0];
+    const heroImg = heroSrc ? this.media(heroSrc, { pointerEvents: 'none', ...imgStyle, position: 'absolute', inset: 0 }) : null;
+    const rmCount = view === 'home' ? 0 : (((this.state.gal || {}).removidas || {})[this.key(view)] || []).length;
+    const n = all.length;
+    return {
+      isHome: view === 'home',
+      isGallery: view !== 'home',
+      is2: a2, is1: view === 'a1',
+      tab2Bg: a2 ? '#EAD9B5' : 'transparent', tab2Fg: a2 ? '#0B1A1F' : '#F4EFE6',
+      tab1Bg: view === 'a1' ? '#EAD9B5' : 'transparent', tab1Fg: view === 'a1' ? '#0B1A1F' : '#F4EFE6',
+      aptTitle: a2 ? '2 dormitórios' : '1 dormitório',
+      countLabel: (() => { const v = all.filter((s) => this.isVid(s)).length + (videoOk ? 1 : 0), f = all.length - all.filter((s) => this.isVid(s)).length; return [f ? `${f} foto${f > 1 ? 's' : ''}` : '', v ? `${v} vídeo${v > 1 ? 's' : ''}` : ''].filter(Boolean).join(' · '); })(),
+      heroImg, editable,
+      tileCursor: editable ? 'grab' : 'zoom-in',
+      heroDragStart: all[0] ? this.dnd(all[0]).dragStart : null,
+      heroDragOver: all[0] ? this.dnd(all[0]).dragOver : null,
+      heroDrop: all[0] ? this.dnd(all[0]).drop : null,
+      heroOutline: all[0] && this.state.dragOver === all[0] && this.state.dragSrc !== all[0] ? '3px solid #EAD9B5' : 'none',
+      dragEnd: () => this.setState({ dragSrc: null, dragOver: null }),
+      isEmpty: view !== 'home' && !!this.state.gal && n === 0,
+      showRestore: editable && rmCount > 0,
+      restoreLabel: `Restaurar ${rmCount} foto${rmCount > 1 ? 's' : ''} excluída${rmCount > 1 ? 's' : ''}`,
+      restore: () => this.restore(),
+      openHero: () => videoOk ? this.setState({ vol: muted ? (this.state.volLast || 60) : 0, ...(muted ? {} : { volLast: vol }) }) : (heroSrc && this.openLb(heroSrc)),
+      videoOk, heroVideo,
+      volCtrl: videoOk ? this.volCtrl(vol, 'vol') : null,
+      otherLabel: a2 ? 'Apartamento 1 dormitório' : 'Apartamento 2 dormitórios',
+      openOther: () => this.go(a2 ? 'a1' : 'a2'),
+      photos,
+      open2: () => this.go('a2'),
+      open1: () => this.go('a1'),
+      goHome: () => this.go('home'),
+      lbOpen: !!lb,
+      lbImg: lb && this.isVid(lb.srcs[lb.i]) ? React.createElement('div', { key: 'lb' + lb.i, onClick: (e) => e.stopPropagation(), style: { position: 'relative', width: '100%', height: '100%', borderRadius: 18, overflow: 'hidden' } },
+        this.frame(lb.srcs[lb.i], { muted: lbMuted, volume: lbVol / 100 }),
+        React.createElement('div', { style: { position: 'absolute', top: 12, right: 12, zIndex: 2 } }, this.volCtrl(lbVol, 'lbVol'))) : lb ? React.createElement('img', { key: lb.i, src: lb.srcs[lb.i], alt: '', onClick: (e) => e.stopPropagation(), style: { maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 18, userSelect: 'none' } }) : null,
+      lbCounter: lb ? `${lb.i + 1} / ${lb.srcs.length}` : '',
+      closeLb: () => this.closeLb(),
+      prev: (e) => { e.stopPropagation(); this.step(-1); },
+      next: (e) => { e.stopPropagation(); this.step(1); },
+      onTouchStart: (e) => { this._tx = e.touches[0].clientX; },
+      onTouchEnd: (e) => {
+        const dx = e.changedTouches[0].clientX - (this._tx ?? 0);
+        if (Math.abs(dx) > 45) this.step(dx < 0 ? 1 : -1);
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
